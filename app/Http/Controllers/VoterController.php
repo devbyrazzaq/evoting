@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\VoterCreateRequest;
 use App\Http\Requests\VoterUpdateRequest;
 use App\Models\Voter;
+use App\Tables\Voters;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\SpladeTable;
 use Illuminate\Support\Str;
@@ -15,18 +16,20 @@ class VoterController extends Controller
     public function index()
     {
         return view('voter.index', [
-            'voters' => SpladeTable::for(Voter::latest())
-                ->column('name', canBeHidden: false, sortable:true)
-                ->withGlobalSearch(columns:['name', 'email'])
-                ->column('voter_id')
-                ->column('email')
-                ->column('status')
-                ->column(label: 'Actions')
-                ->selectFilter(key:'status', label:'Status', options: [
-                    true => 'has been vote',
-                    false => 'note yet vote',
-                ])
-                ->paginate(5),
+            // 'voters' => SpladeTable::for(Voter::latest())
+            //     ->column('name', canBeHidden: false, sortable:true)
+            //     ->withGlobalSearch(columns:['name', 'email'])
+            //     ->column('voter_id')
+            //     ->column('email')
+            //     ->column('status')
+            //     ->column(label: 'Actions')
+            //     ->selectFilter(key:'status', label:'Status', options: [
+            //         true => 'has been vote',
+            //         false => 'note yet vote',
+            //     ])
+            //     ->paginate(5),
+
+            'voters' => Voters::class,
         ]);
     }
 
