@@ -40,7 +40,18 @@
 
                 <x-splade-cell actions as="$voter">
                     <div class="">
-                        <Link href="{{ route('voter.edit', $voter->username) }}" class="px-3 py-1 border border-slate-500 hover:bg-slate-700 hover:text-white rounded-lg"> Edit </Link>
+                        <Link href="{{ route('voter.edit', $voter->username) }}" class="font-bold px-3 py-1 border-2 border-slate-500 hover:border-slate-700 hover:bg-slate-700 hover:text-white rounded-lg"> Edit </Link>
+                        <Link
+                            method="DELETE"
+                            preserve-scroll
+                            class="font-bold px-3 py-1 border-2 border-slate-500 hover:border-slate-700 hover:bg-slate-700 hover:text-white rounded-lg ml-2"
+                            confirm="Delete {{ $voter->name }} Data ...."
+                            confirm-text="Are you sure want to delete {{ $voter->name }} data?"
+                            confirm-button="Yes, delete data!"
+                            cancel-button="No, keep the data!"
+                            href="{{ route('voter.destroy', $voter->id) }}">
+                            Delete
+                        </Link>
                     </div>
                 </x-splade-cell>
 

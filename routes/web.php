@@ -41,6 +41,7 @@ Route::middleware('splade')->group(function () {
         Route::get('/voter/{voter:username}/edit', [VoterController::class, 'edit'])->name('voter.edit');
         Route::put('/voter/{voter}', [VoterController::class, 'update'])->name('voter.update');
         Route::get('/voter/create', [VoterController::class, 'create'])->name('voter.create');
+        Route::delete('/voter/{voter}', [VoterController::class, 'destroy'])->name('voter.destroy');
         Route::get('/voter/import', [VoterController::class, 'import'])->name('voter.import');
 
         Route::get('/candidate', [CandidateController::class, 'index'])->name('candidate.index');

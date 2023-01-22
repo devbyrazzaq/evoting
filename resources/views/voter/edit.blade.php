@@ -31,7 +31,7 @@
                         <x-splade-input name="name" label="Name" class="mb-4" />
                         <x-splade-input name="email" label="Email" class="mb-8"  />
                         <input type="hidden" name="old_email" value="{{ $voter->email }}">
-                        <x-splade-submit class=" bg-blue-500" label="Add Voter" :spinner="false"/>
+                        <x-splade-submit class=" bg-blue-500" label="Update Data Voter" :spinner="true"/>
                     </x-splade-form>
                 </div>
             </div>

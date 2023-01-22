@@ -60,8 +60,16 @@ class VoterController extends Controller
         // dd($request->validated());
 
         $voter->update($request->validated());
-        Toast::title('Voter has been updated');
+        Toast::title('Voter ' . $voter->name .' data has been updated');
 
         return redirect()->route('voter.index');
+    }
+
+    public function destroy(Voter $voter)
+    {
+        $voter->delete();
+        Toast::success('Voter ' . $voter->name . ' Data Deleted Succesfully');
+
+        return back();
     }
 }
