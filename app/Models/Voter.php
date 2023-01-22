@@ -9,5 +9,5 @@ class Voter extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'voter_id', 'status'];
+    protected $fillable = ['name', 'email', 'voter_id', 'status','username'];
 }

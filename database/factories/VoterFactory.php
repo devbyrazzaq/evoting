@@ -20,6 +20,7 @@ class VoterFactory extends Factory
         return [
             'voter_id' => Str::random(6),
             'name' => fake()->name(),
+            'username' => fake()->userName(),
             'email' => fake()->email(),
             'status' => rand(0,1),
         ];

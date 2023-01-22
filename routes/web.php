@@ -37,6 +37,9 @@ Route::middleware('splade')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
         Route::get('/voter', [VoterController::class, 'index'])->name('voter.index');
+        Route::post('/voter', [VoterController::class, 'store'])->name('voter.store');
+        Route::get('/voter/{voter:username}/edit', [VoterController::class, 'edit'])->name('voter.edit');
+        Route::put('/voter/{voter}', [VoterController::class, 'update'])->name('voter.update');
         Route::get('/voter/create', [VoterController::class, 'create'])->name('voter.create');
         Route::get('/voter/import', [VoterController::class, 'import'])->name('voter.import');
 

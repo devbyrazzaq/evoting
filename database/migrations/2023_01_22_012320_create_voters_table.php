@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('voter_id')->unique();
             $table->string('name');
+            $table->string('username');
             $table->string('email')->unique();
-            $table->boolean('status');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }
