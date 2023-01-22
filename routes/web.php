@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VoterController;
+use App\Http\Controllers\CandidateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +35,12 @@ Route::middleware('splade')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        Route::get('/voter', [VoterController::class, 'index'])->name('voter.index');
+        Route::get('/voter/create', [VoterController::class, 'create'])->name('voter.create');
+        Route::get('/voter/import', [VoterController::class, 'import'])->name('voter.import');
+
+        Route::get('/candidate', [CandidateController::class, 'index'])->name('candidate.index');
     });
 
     require __DIR__.'/auth.php';
