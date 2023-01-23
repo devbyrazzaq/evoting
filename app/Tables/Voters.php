@@ -39,7 +39,7 @@ class Voters extends AbstractTable
      */
     public function for()
     {
-        return Voter::query();
+        return Voter::latest();
     }
 
     /**

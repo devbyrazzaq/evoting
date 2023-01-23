@@ -1,4 +1,4 @@
-<x-app-layout>
+L<x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -43,7 +43,6 @@
                         <Link href="{{ route('voter.edit', $voter->username) }}" class="font-bold px-3 py-1 border-2 border-slate-500 hover:border-slate-700 hover:bg-slate-700 hover:text-white rounded-lg"> Edit </Link>
                         <Link
                             method="DELETE"
-                            preserve-scroll
                             class="font-bold px-3 py-1 border-2 border-slate-500 hover:border-slate-700 hover:bg-slate-700 hover:text-white rounded-lg ml-2"
                             confirm="Delete {{ $voter->name }} Data ...."
                             confirm-text="Are you sure want to delete {{ $voter->name }} data?"
@@ -52,6 +51,7 @@
                             href="{{ route('voter.destroy', $voter->id) }}">
                             Delete
                         </Link>
+                        {{-- <link href="{{ route('voter.export')  }} ,class='font-semibolde'>Test</Link> --}}
                     </div>
                 </x-splade-cell>
 
